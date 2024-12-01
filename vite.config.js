@@ -37,9 +37,12 @@ export default defineConfig(({ command }) => {
       outDir: '../dist',
       emptyOutDir: true,
     },
+    optimizeDeps: {
+      include: ['simplelightbox', 'izitoast'],
+    },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**.html']),
+      FullReload(['./src/*.html']),
       SortCss({
         sort: 'mobile-first',
       }),
